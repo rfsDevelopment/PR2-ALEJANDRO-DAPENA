@@ -6,7 +6,7 @@
 };
 
 const BASE_LAYOUT = {
-  margin: { l: 60, r: 30, t: 60, b: 70 },
+  margin: { l: 70, r: 30, t: 70, b: 80 },
   font: { family: 'Google Sans, sans-serif', color: COLORS.black },
   paper_bgcolor: 'rgba(0,0,0,0)',
   plot_bgcolor: 'rgba(0,0,0,0)'
@@ -76,9 +76,9 @@ function plotLine(target, x, y, name, title, xLabel, yLabel) {
   };
   setChartHeight(target, 420);
   Plotly.newPlot(target, [trace], layoutFor(target, {
-    title: { text: title },
-    xaxis: { title: xLabel },
-    yaxis: { title: yLabel }
+    title: { text: title, x: 0, xanchor: 'left' },
+    xaxis: { title: { text: xLabel, standoff: 12 } },
+    yaxis: { title: { text: yLabel, standoff: 12 } }
   }), CONFIG);
 }
 
@@ -101,9 +101,9 @@ function plotBar(target, x, y, orientation, title, xLabel, yLabel) {
     marker: { color: COLORS.red }
   };
   const layout = layoutFor(target, {
-    title: { text: title },
-    xaxis: { title: xLabel, automargin: true },
-    yaxis: { title: yLabel, automargin: true }
+    title: { text: title, x: 0, xanchor: 'left' },
+    xaxis: { title: { text: xLabel, standoff: 12 }, automargin: true },
+    yaxis: { title: { text: yLabel, standoff: 12 }, automargin: true }
   });
   Plotly.newPlot(target, [trace], layout, CONFIG);
 }
@@ -121,8 +121,8 @@ function plotBox(target, traces, title, yLabel) {
     marker: { color: COLORS.red }
   }));
   Plotly.newPlot(target, data, layoutFor(target, {
-    title: { text: title },
-    yaxis: { title: yLabel }
+    title: { text: title, x: 0, xanchor: 'left' },
+    yaxis: { title: { text: yLabel, standoff: 12 } }
   }), CONFIG);
 }
 
@@ -138,9 +138,9 @@ function plotHist(target, values, title, xLabel, yLabel) {
     marker: { color: COLORS.red }
   };
   Plotly.newPlot(target, [trace], layoutFor(target, {
-    title: { text: title },
-    xaxis: { title: xLabel },
-    yaxis: { title: yLabel }
+    title: { text: title, x: 0, xanchor: 'left' },
+    xaxis: { title: { text: xLabel, standoff: 12 } },
+    yaxis: { title: { text: yLabel, standoff: 12 } }
   }), CONFIG);
 }
 
@@ -170,9 +170,9 @@ function plotScatter(target, x, y, trend, title, xLabel, yLabel) {
     });
   }
   Plotly.newPlot(target, traces, layoutFor(target, {
-    title: { text: title },
-    xaxis: { title: xLabel },
-    yaxis: { title: yLabel }
+    title: { text: title, x: 0, xanchor: 'left' },
+    xaxis: { title: { text: xLabel, standoff: 12 } },
+    yaxis: { title: { text: yLabel, standoff: 12 } }
   }), CONFIG);
 }
 
@@ -190,14 +190,14 @@ function plotHeatmap(target, data, title, xLabel, yLabel) {
     colorscale: 'Reds'
   };
   const layout = layoutFor(target, {
-    title: { text: title },
+    title: { text: title, x: 0, xanchor: 'left' },
     xaxis: {
-      title: xLabel,
+      title: { text: xLabel, standoff: 12 },
       tickangle: -45,
       automargin: true,
       tickfont: { size: 10 }
     },
-    yaxis: { title: yLabel, automargin: true },
+    yaxis: { title: { text: yLabel, standoff: 12 }, automargin: true },
     margin: { l: 70, r: 30, t: 60, b: 140 }
   });
   Plotly.newPlot(target, [trace], layout, CONFIG);
@@ -222,9 +222,9 @@ function plotBarWithCI(target, data, title, xLabel, yLabel) {
     } : undefined
   };
   Plotly.newPlot(target, [trace], layoutFor(target, {
-    title: { text: title },
-    xaxis: { title: xLabel },
-    yaxis: { title: yLabel }
+    title: { text: title, x: 0, xanchor: 'left' },
+    xaxis: { title: { text: xLabel, standoff: 12 } },
+    yaxis: { title: { text: yLabel, standoff: 12 } }
   }), CONFIG);
 }
 
@@ -254,9 +254,9 @@ function plotScatterWithLine(target, x, y, title, xLabel, yLabel) {
     }
   ];
   Plotly.newPlot(target, traces, layoutFor(target, {
-    title: { text: title },
-    xaxis: { title: xLabel },
-    yaxis: { title: yLabel }
+    title: { text: title, x: 0, xanchor: 'left' },
+    xaxis: { title: { text: xLabel, standoff: 12 } },
+    yaxis: { title: { text: yLabel, standoff: 12 } }
   }), CONFIG);
 }
 
@@ -315,9 +315,9 @@ function init() {
       name: String(trace.decade)
     }));
     Plotly.newPlot('chart-b2-02', traces, layoutFor('chart-b2-02', {
-      title: { text: 'BLOQUE 2 - Probabilidad de podio por grid (decadas)' },
-      xaxis: { title: 'Posicion de salida' },
-      yaxis: { title: 'Probabilidad de podio' }
+      title: { text: 'BLOQUE 2 - Probabilidad de podio por grid (decadas)', x: 0, xanchor: 'left' },
+      xaxis: { title: { text: 'Posicion de salida', standoff: 12 } },
+      yaxis: { title: { text: 'Probabilidad de podio', standoff: 12 } }
     }), CONFIG);
   });
   loadJson('data/b2_03.json').then((data) => plotBox(
