@@ -18,6 +18,19 @@ function loadJson(path) {
   return fetch(path).then((res) => res.json());
 }
 
+function layoutFor(target, extra) {
+  const el = document.getElementById(target);
+  const rect = el.getBoundingClientRect();
+  const height = Math.max(320, Math.floor(rect.height || 0));
+  const width = Math.max(320, Math.floor(rect.width || 0));
+  return {
+    ...BASE_LAYOUT,
+    width,
+    height,
+    ...extra
+  };
+}
+
 function plotLine(target, x, y, name) {
   const trace = {
     x,
@@ -26,7 +39,7 @@ function plotLine(target, x, y, name) {
     mode: 'lines+markers',
     name: name || ''
   };
-  Plotly.newPlot(target, [trace], BASE_LAYOUT, CONFIG);
+  Plotly.newPlot(target, [trace], layoutFor(target), CONFIG);
 }
 
 function plotBar(target, x, y, orientation) {
@@ -38,11 +51,10 @@ function plotBar(target, x, y, orientation) {
     orientation: orientation || 'v',
     marker: { color: COLORS.red }
   };
-  const layout = {
-    ...BASE_LAYOUT,
+  const layout = layoutFor(target, {
     yaxis: isHorizontal ? { automargin: true } : undefined,
-    height: isHorizontal ? Math.max(360, y.length * 22) : undefined
-  };
+    height: isHorizontal ? Math.max(360, y.length * 24) : undefined
+  });
   Plotly.newPlot(target, [trace], layout, CONFIG);
 }
 
@@ -53,7 +65,7 @@ function plotBox(target, traces) {
     type: 'box',
     marker: { color: COLORS.red }
   }));
-  Plotly.newPlot(target, data, BASE_LAYOUT, CONFIG);
+  Plotly.newPlot(target, data, layoutFor(target), CONFIG);
 }
 
 function plotHist(target, values) {
@@ -62,7 +74,7 @@ function plotHist(target, values) {
     type: 'histogram',
     marker: { color: COLORS.red }
   };
-  Plotly.newPlot(target, [trace], BASE_LAYOUT, CONFIG);
+  Plotly.newPlot(target, [trace], layoutFor(target), CONFIG);
 }
 
 function plotScatter(target, x, y, trend) {
@@ -86,7 +98,7 @@ function plotScatter(target, x, y, trend) {
       line: { color: COLORS.black }
     });
   }
-  Plotly.newPlot(target, traces, BASE_LAYOUT, CONFIG);
+  Plotly.newPlot(target, traces, layoutFor(target), CONFIG);
 }
 
 function plotHeatmap(target, data) {
@@ -97,10 +109,10 @@ function plotHeatmap(target, data) {
     type: 'heatmap',
     colorscale: 'Reds'
   };
-  const layout = {
-    ...BASE_LAYOUT,
-    xaxis: { tickangle: -45 }
-  };
+  const layout = layoutFor(target, {
+    xaxis: { tickangle: -45 },
+    yaxis: { automargin: true }
+  });
   Plotly.newPlot(target, [trace], layout, CONFIG);
 }
 
@@ -117,7 +129,7 @@ function plotBarWithCI(target, data) {
       visible: true
     } : undefined
   };
-  Plotly.newPlot(target, [trace], BASE_LAYOUT, CONFIG);
+  Plotly.newPlot(target, [trace], layoutFor(target), CONFIG);
 }
 
 function plotScatterWithLine(target, x, y) {
@@ -140,7 +152,7 @@ function plotScatterWithLine(target, x, y) {
       hoverinfo: 'skip'
     }
   ];
-  Plotly.newPlot(target, traces, BASE_LAYOUT, CONFIG);
+  Plotly.newPlot(target, traces, layoutFor(target), CONFIG);
 }
 
 function init() {
@@ -158,7 +170,7 @@ function init() {
       mode: 'lines',
       name: String(trace.decade)
     }));
-    Plotly.newPlot('chart-b2-02', traces, BASE_LAYOUT, CONFIG);
+    Plotly.newPlot('chart-b2-02', traces, layoutFor('chart-b2-02'), CONFIG);
   });
   loadJson('data/b2_03.json').then((data) => plotBox('chart-b2-03', data.traces));
 
@@ -179,3 +191,10 @@ function init() {
 }
 
 window.addEventListener('DOMContentLoaded', init);
+window.addEventListener('resize', () => {
+  document.querySelectorAll('.chart').forEach((el) => {
+    if (el.data) {
+      Plotly.Plots.resize(el);
+    }
+  });
+});
