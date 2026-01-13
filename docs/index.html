@@ -18,7 +18,11 @@
           <div>
             <h1>Dominio competitivo y dinamicas de carrera en F1 (1950-2022)</h1>
             <h3>Serie de visualizaciones sobre dominio de equipos, parrilla vs resultado, pitstops y sprint</h3>
-            <small>Alejandro Dapena<br>PEC4 - Visualizacion de Datos<br>Actualizado automaticamente desde CSV oficiales</small>
+            <small>
+              Alejandro Dapena<br>
+              PEC4 - Visualizacion de Datos<br>
+              Actualizado automaticamente desde CSV oficiales (<a href="https://www.kaggle.com/datasets/debashish311601/formula-1-official-data-19502022?utm_source=chatgpt.com&select=race_details.csv" target="_blank" rel="noopener">Kaggle F1 1950-2022</a>)
+            </small>
             <nav class="index">
               <a href="#bloque-1"><span class="color swatch-a"></span>Bloque 1 - Dominio competitivo</a>
               <a href="#bloque-2"><span class="color swatch-b"></span>Bloque 2 - Parrilla vs resultado</a>
@@ -27,7 +31,10 @@
             </nav>
           </div>
           <div class="hero-meta">
-            <small>Fuentes: archivos CSV del repositorio. Cada grafica incluye fuente y notas.</small>
+            <small>
+              Fuentes: archivos CSV del repositorio. Cada grafica incluye fuente y notas.
+              <a href="https://www.kaggle.com/datasets/debashish311601/formula-1-official-data-19502022?utm_source=chatgpt.com&select=race_details.csv" target="_blank" rel="noopener">Dataset Kaggle</a>
+            </small>
           </div>
         </div>
       </div>
@@ -49,6 +56,7 @@
 
       <div class="c">
         <div class="graph big">
+          <p class="chart-note">Mapa de calor que muestra la cuota de victorias por equipo en cada decada; los tonos mas intensos indican mayor dominio relativo.</p>
           <div id="chart-b1-02" class="chart"></div>
         </div>
       </div>
@@ -82,9 +90,11 @@
       <div class="c">
         <div class="multicol">
           <div class="graph small">
+            <p class="chart-note">Curvas por decada: cuanto mas cerca de 1, mayor probabilidad de podio desde esa posicion.</p>
             <div id="chart-b2-02" class="chart"></div>
           </div>
           <div class="graph small">
+            <p class="chart-note">Distribucion del cambio de posiciones (final - grid) para ver ganancia o perdida por decada.</p>
             <div id="chart-b2-03" class="chart"></div>
           </div>
         </div>
@@ -128,6 +138,7 @@
       </div>
 
       <div class="c">
+        <p class="chart-note">Tres perspectivas del sprint: cambios netos de posicion, variabilidad del top-10 y comparacion del impacto sprint frente al margen final.</p>
         <div class="multicol">
           <div class="graph small">
             <div id="chart-b4-02" class="chart"></div>

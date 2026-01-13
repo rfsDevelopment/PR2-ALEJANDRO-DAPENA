@@ -79,6 +79,12 @@ article .c {
   color: var(--f1-red);
 }
 
+.chart-note {
+  margin: 0 0 10px 0;
+  font-size: 13px;
+  color: var(--f1-gray);
+}
+
 .hero-meta {
   display: flex;
   flex-direction: column;
