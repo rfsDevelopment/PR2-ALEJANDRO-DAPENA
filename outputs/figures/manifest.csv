@@ -1,15 +1,15 @@
 filename,title,datasets,filters,generated_at
-B1_01_linea_temporal_pct_victorias.png,BLOQUE 1 - Línea temporal del % de victorias del equipo dominante por temporada,race_details.csv,Ganadores (Pos=1); años con carreras,2026-01-13T10:05:06
-B1_02_heatmap_decada_equipo.png,BLOQUE 1 - Heatmap década × equipo (share de victorias o puntos),race_details.csv,Ganadores (Pos=1); share por década,2026-01-13T10:05:06
-B1_03a_rachas_consecutivas_pilotos.png,BLOQUE 1 - Barras de continuidad: títulos consecutivos,driver_standings.csv,Pos=1; racha máxima de años consecutivos,2026-01-13T10:05:06
-B1_03b_rachas_consecutivas_equipos.png,BLOQUE 1 - Barras de continuidad: títulos consecutivos,constructor_standings.csv,Pos=1; racha máxima de años consecutivos,2026-01-13T10:05:07
-B2_01_correlacion_grid_posicion.png,BLOQUE 2 - Correlación Grid ↔ Posición final por temporada,"race_details.csv, starting_grids.csv",Excluye DNFs (posición final no numérica),2026-01-13T10:05:07
-B2_02_prob_podio_grid_decadas.png,BLOQUE 2 - Probabilidad de podio según posición de salida (por décadas),"race_details.csv, starting_grids.csv",Excluye DNFs (posición final no numérica),2026-01-13T10:05:07
-B2_03_boxplot_posiciones_ganadas.png,BLOQUE 2 - Boxplot de posiciones ganadas/perdidas por década,"race_details.csv, starting_grids.csv",Excluye DNFs (posición final no numérica),2026-01-13T10:05:08
-B3_01_scatter_pit_time_vs_pos.png,BLOQUE 3 - Scatter: tiempo total en boxes vs posición final,"pitstops.csv, race_details.csv",Excluye DNFs (posición final no numérica),2026-01-13T10:05:08
-B3_02_efecto_marginal_pit_time.png,BLOQUE 3 - Efecto marginal del tiempo en boxes por década,"pitstops.csv, race_details.csv",Excluye DNFs (posición final no numérica),2026-01-13T10:05:08
-B3_03_distribucion_errores_graves.png,BLOQUE 3 - Distribución de errores graves en boxes,pitstops.csv,Error grave = parada > p95 de su temporada,2026-01-13T10:05:08
-B4_01_pct_puntos_sprint.png,BLOQUE 4 - % de puntos del mundial procedentes del sprint,"sprint_results.csv, driver_standings.csv",Años con sprint,2026-01-13T10:05:09
-B4_02_cambios_posicion_sprint.png,BLOQUE 4 - Cambios de posición inducidos por el sprint,"sprint_results.csv, sprint_grid.csv, starting_grids.csv",Delta = grid domingo - posición sprint,2026-01-13T10:05:09
-B4_03_imprevisibilidad_sprint.png,BLOQUE 4 - Imprevisibilidad: sprint vs no sprint,"race_details.csv, sprint_results.csv",Top-10; varianza por carrera,2026-01-13T10:05:09
-B4_04_sprint_campeonatos.png,BLOQUE 4 - Sprint y campeonatos decididos,"sprint_results.csv, driver_standings.csv",Pos=1 vs Pos=2; puntos sprint por piloto,2026-01-13T10:05:09
+B1_01_linea_temporal_pct_victorias.png,BLOQUE 1 - Línea temporal del % de victorias del equipo dominante por temporada,race_details.csv,Ganadores (Pos=1); años con carreras,2026-01-13T10:05:28
+B1_02_heatmap_decada_equipo.png,BLOQUE 1 - Heatmap década × equipo (share de victorias o puntos),race_details.csv,Ganadores (Pos=1); share por década,2026-01-13T10:05:28
+B1_03a_rachas_consecutivas_pilotos.png,BLOQUE 1 - Barras de continuidad: títulos consecutivos,driver_standings.csv,Pos=1; racha máxima de años consecutivos,2026-01-13T10:05:28
+B1_03b_rachas_consecutivas_equipos.png,BLOQUE 1 - Barras de continuidad: títulos consecutivos,constructor_standings.csv,Pos=1; racha máxima de años consecutivos,2026-01-13T10:05:29
+B2_01_correlacion_grid_posicion.png,BLOQUE 2 - Correlación Grid ↔ Posición final por temporada,"race_details.csv, starting_grids.csv",Excluye DNFs (posición final no numérica),2026-01-13T10:05:29
+B2_02_prob_podio_grid_decadas.png,BLOQUE 2 - Probabilidad de podio según posición de salida (por décadas),"race_details.csv, starting_grids.csv",Excluye DNFs (posición final no numérica),2026-01-13T10:05:29
+B2_03_boxplot_posiciones_ganadas.png,BLOQUE 2 - Boxplot de posiciones ganadas/perdidas por década,"race_details.csv, starting_grids.csv",Excluye DNFs (posición final no numérica),2026-01-13T10:05:30
+B3_01_scatter_pit_time_vs_pos.png,BLOQUE 3 - Scatter: tiempo total en boxes vs posición final,"pitstops.csv, race_details.csv",Excluye DNFs (posición final no numérica),2026-01-13T10:05:30
+B3_02_efecto_marginal_pit_time.png,BLOQUE 3 - Efecto marginal del tiempo en boxes por década,"pitstops.csv, race_details.csv",Excluye DNFs (posición final no numérica),2026-01-13T10:05:30
+B3_03_distribucion_errores_graves.png,BLOQUE 3 - Distribución de errores graves en boxes,pitstops.csv,Error grave = parada > p95 de su temporada,2026-01-13T10:05:30
+B4_01_pct_puntos_sprint.png,BLOQUE 4 - % de puntos del mundial procedentes del sprint,"sprint_results.csv, driver_standings.csv",Años con sprint,2026-01-13T10:05:31
+B4_02_cambios_posicion_sprint.png,BLOQUE 4 - Cambios de posición inducidos por el sprint,"sprint_results.csv, sprint_grid.csv, starting_grids.csv",Delta = grid domingo - posición sprint,2026-01-13T10:05:31
+B4_03_imprevisibilidad_sprint.png,BLOQUE 4 - Imprevisibilidad: sprint vs no sprint,"race_details.csv, sprint_results.csv",Top-10; varianza por carrera,2026-01-13T10:05:31
+B4_04_sprint_campeonatos.png,BLOQUE 4 - Sprint y campeonatos decididos,"sprint_results.csv, driver_standings.csv",Pos=1 vs Pos=2; puntos sprint por piloto,2026-01-13T10:05:31
