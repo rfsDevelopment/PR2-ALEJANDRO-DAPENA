@@ -49,6 +49,10 @@ article .c {
   font-size: 19px;
 }
 
+.hero-title {
+  font-size: 5.2vw;
+}
+
 .hero ul {
   padding: 0;
 }
