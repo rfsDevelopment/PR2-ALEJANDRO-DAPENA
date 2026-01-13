@@ -49,11 +49,12 @@ article .c {
   font-size: 19px;
 }
 
-.hero-title {
-  font-size: 28px;
+.hero h1.hero-title {
+  font-size: 26px !important;
   font-weight: 600;
   letter-spacing: -0.01em;
-  max-width: 22ch;
+  line-height: 1.15;
+  max-width: 26ch;
 }
 
 .hero ul {
@@ -189,6 +190,9 @@ p {
   }
   .hero h1 {
     font-size: 42px;
+  }
+  .hero h1.hero-title {
+    font-size: 24px !important;
   }
 }
 
