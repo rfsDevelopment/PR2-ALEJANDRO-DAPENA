@@ -30,6 +30,7 @@ function plotLine(target, x, y, name) {
 }
 
 function plotBar(target, x, y, orientation) {
+  const isHorizontal = orientation === 'h';
   const trace = {
     x,
     y,
@@ -37,7 +38,12 @@ function plotBar(target, x, y, orientation) {
     orientation: orientation || 'v',
     marker: { color: COLORS.red }
   };
-  Plotly.newPlot(target, [trace], BASE_LAYOUT, CONFIG);
+  const layout = {
+    ...BASE_LAYOUT,
+    yaxis: isHorizontal ? { automargin: true } : undefined,
+    height: isHorizontal ? Math.max(360, y.length * 22) : undefined
+  };
+  Plotly.newPlot(target, [trace], layout, CONFIG);
 }
 
 function plotBox(target, traces) {

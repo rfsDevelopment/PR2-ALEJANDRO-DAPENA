@@ -62,6 +62,16 @@ article .c {
   font-size: 18px;
 }
 
+.hero-meta {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.hero-meta ul {
+  margin-top: auto;
+}
+
 .color {
   width: 20px;
   height: 13px;
