@@ -31,6 +31,19 @@ function layoutFor(target, extra) {
   };
 }
 
+function setChartHeight(target, height) {
+  const el = document.getElementById(target);
+  el.style.height = `${height}px`;
+}
+
+function barHeightFor(labels) {
+  return Math.max(360, labels.length * 28 + 120);
+}
+
+function heatmapHeightFor(rows) {
+  return Math.max(360, rows.length * 24 + 160);
+}
+
 function plotLine(target, x, y, name) {
   const trace = {
     x,
@@ -39,11 +52,17 @@ function plotLine(target, x, y, name) {
     mode: 'lines+markers',
     name: name || ''
   };
+  setChartHeight(target, 420);
   Plotly.newPlot(target, [trace], layoutFor(target), CONFIG);
 }
 
 function plotBar(target, x, y, orientation) {
   const isHorizontal = orientation === 'h';
+  if (isHorizontal) {
+    setChartHeight(target, barHeightFor(y));
+  } else {
+    setChartHeight(target, 420);
+  }
   const trace = {
     x,
     y,
@@ -52,13 +71,13 @@ function plotBar(target, x, y, orientation) {
     marker: { color: COLORS.red }
   };
   const layout = layoutFor(target, {
-    yaxis: isHorizontal ? { automargin: true } : undefined,
-    height: isHorizontal ? Math.max(360, y.length * 24) : undefined
+    yaxis: isHorizontal ? { automargin: true } : undefined
   });
   Plotly.newPlot(target, [trace], layout, CONFIG);
 }
 
 function plotBox(target, traces) {
+  setChartHeight(target, 420);
   const data = traces.map((trace) => ({
     y: trace.values,
     name: trace.label,
@@ -69,6 +88,7 @@ function plotBox(target, traces) {
 }
 
 function plotHist(target, values) {
+  setChartHeight(target, 420);
   const trace = {
     x: values,
     type: 'histogram',
@@ -102,6 +122,7 @@ function plotScatter(target, x, y, trend) {
 }
 
 function plotHeatmap(target, data) {
+  setChartHeight(target, heatmapHeightFor(data.decades || []));
   const trace = {
     z: data.z,
     x: data.teams,
@@ -117,6 +138,7 @@ function plotHeatmap(target, data) {
 }
 
 function plotBarWithCI(target, data) {
+  setChartHeight(target, 420);
   const trace = {
     x: data.decades,
     y: data.coefs,
@@ -133,6 +155,7 @@ function plotBarWithCI(target, data) {
 }
 
 function plotScatterWithLine(target, x, y) {
+  setChartHeight(target, 420);
   const maxVal = Math.max(0, ...x, ...y);
   const minVal = Math.min(0, ...x, ...y);
   const traces = [
@@ -163,6 +186,7 @@ function init() {
 
   loadJson('data/b2_01.json').then((data) => plotLine('chart-b2-01', data.years, data.rho));
   loadJson('data/b2_02.json').then((data) => {
+    setChartHeight('chart-b2-02', 420);
     const traces = data.traces.map((trace) => ({
       x: trace.x,
       y: trace.y,
@@ -181,6 +205,7 @@ function init() {
   loadJson('data/b4_01.json').then((data) => plotBar('chart-b4-01', data.years, data.pct));
   loadJson('data/b4_02.json').then((data) => plotHist('chart-b4-02', data.values));
   loadJson('data/b4_03.json').then((data) => {
+    setChartHeight('chart-b4-03', 420);
     const traces = [
       { label: 'Con sprint', values: data.sprint },
       { label: 'Sin sprint', values: data.nonsprint }
