@@ -62,6 +62,23 @@ article .c {
   font-size: 18px;
 }
 
+.index {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.index a {
+  color: var(--f1-black);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.index a:hover {
+  color: var(--f1-red);
+}
+
 .hero-meta {
   display: flex;
   flex-direction: column;
@@ -91,8 +108,7 @@ article .c {
 .graph {
   border: solid 4px var(--f1-black);
   position: relative;
-  padding: 20px;
-  padding-left: 0;
+  padding: 28px;
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -118,11 +134,11 @@ article .c {
 }
 
 .cols .col:first-of-type {
-  width: 35%;
+  width: 30%;
 }
 
 .cols .col:last-of-type {
-  width: 65%;
+  width: 70%;
 }
 
 .multicol {

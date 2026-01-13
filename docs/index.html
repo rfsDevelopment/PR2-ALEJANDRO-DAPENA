@@ -19,22 +19,22 @@
             <h1>Dominio competitivo y dinamicas de carrera en F1 (1950-2022)</h1>
             <h3>Serie de visualizaciones sobre dominio de equipos, parrilla vs resultado, pitstops y sprint</h3>
             <small>Alejandro Dapena<br>PEC4 - Visualizacion de Datos<br>Actualizado automaticamente desde CSV oficiales</small>
+            <nav class="index">
+              <a href="#bloque-1"><span class="color swatch-a"></span>Bloque 1 - Dominio competitivo</a>
+              <a href="#bloque-2"><span class="color swatch-b"></span>Bloque 2 - Parrilla vs resultado</a>
+              <a href="#bloque-3"><span class="color swatch-c"></span>Bloque 3 - Pitstops</a>
+              <a href="#bloque-4"><span class="color swatch-d"></span>Bloque 4 - Sprint</a>
+            </nav>
           </div>
           <div class="hero-meta">
             <small>Fuentes: archivos CSV del repositorio. Cada grafica incluye fuente y notas.</small>
-            <ul>
-              <li><span class="color swatch-a"></span><b>Bloque 1</b> Dominio competitivo</li>
-              <li><span class="color swatch-b"></span><b>Bloque 2</b> Parrilla vs resultado</li>
-              <li><span class="color swatch-c"></span><b>Bloque 3</b> Pitstops</li>
-              <li><span class="color swatch-d"></span><b>Bloque 4</b> Sprint</li>
-            </ul>
           </div>
         </div>
       </div>
     </div>
 
     <div class="dashboard">
-      <div class="c cols">
+      <div class="c cols" id="bloque-1">
         <div class="col textcol">
           <h1>Dominio competitivo a lo largo del tiempo</h1>
           <p>El dominio de una era se mide aqui como el porcentaje de victorias del equipo mas ganador por temporada. La linea temporal permite identificar picos prolongados de hegemonia y cambios de ciclo en el rendimiento de los equipos.</p>
@@ -66,7 +66,7 @@
         </div>
       </div>
 
-      <div class="c cols">
+      <div class="c cols" id="bloque-2">
         <div class="col textcol">
           <h1>Parrilla vs resultado</h1>
           <p>La correlacion Spearman por temporada describe cuanto condiciona la posicion de salida el resultado final. Se excluyen DNFs para evitar sesgos por retiradas.</p>
@@ -90,7 +90,7 @@
         </div>
       </div>
 
-      <div class="c cols">
+      <div class="c cols" id="bloque-3">
         <div class="col textcol">
           <h1>Pitstops y posicion final</h1>
           <p>El tiempo total en boxes se agrega por piloto-carrera y se compara con la posicion final. La tendencia lineal es solo una guia visual del efecto medio.</p>
@@ -114,7 +114,7 @@
         </div>
       </div>
 
-      <div class="c cols">
+      <div class="c cols" id="bloque-4">
         <div class="col textcol">
           <h1>Sprint y su impacto desde 2021</h1>
           <p>El porcentaje de puntos del mundial aportados por el sprint permite estimar su peso relativo. El histograma de cambios de posicion aproxima el efecto del sprint en la parrilla del domingo.</p>
